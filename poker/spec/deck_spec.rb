@@ -20,4 +20,15 @@ describe Deck do
     end
     #it 'returns shuffled deck'
   end
+
+  describe '#draw_card' do
+    it 'decreases stack count by 1' do
+      deck.draw_card
+      expect(deck.stack.count).to eq(51)
+    end
+
+    it 'returns random card' do
+      
+    end
+  end
 end

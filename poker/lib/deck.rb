@@ -3,19 +3,19 @@ require_relative 'card'
 SYMBOLS = [:heart, :diamond, :spade, :club]
 
 CARD_COMBOS = {
-  '2' => SYMBOLS,
-  '3' => SYMBOLS,
-  '4' => SYMBOLS,
-  '5' => SYMBOLS,
-  '6' => SYMBOLS,
-  '7' => SYMBOLS,
-  '8' => SYMBOLS,
-  '9' => SYMBOLS,
+  '2' =>  SYMBOLS,
+  '3' =>  SYMBOLS,
+  '4' =>  SYMBOLS,
+  '5' =>  SYMBOLS,
+  '6' =>  SYMBOLS,
+  '7' =>  SYMBOLS,
+  '8' =>  SYMBOLS,
+  '9' =>  SYMBOLS,
   '10' => SYMBOLS,
-  'J' => SYMBOLS,
-  'Q' => SYMBOLS,
-  'K' => SYMBOLS,
-  'A' => SYMBOLS,
+  'J' =>  SYMBOLS,
+  'Q' =>  SYMBOLS,
+  'K' =>  SYMBOLS,
+  'A' =>  SYMBOLS,
 }
 
 class Deck
@@ -23,6 +23,20 @@ class Deck
 
   def initialize(stack = Deck.build_deck)
     @stack = stack
+  end
+
+  def draw_card
+    # return random Card
+    # pop that card
+  end
+
+  def deal_hand
+    # return 5 randos
+    # pop off
+  end
+
+  def reset_deck
+    @stack = Deck::build_deck
   end
 
   def self.build_deck
