@@ -11,6 +11,5 @@ class Card
     @value == other_card.value
     @symbol == other_card.symbol
     @color == other_card.color
-  end
-  
+  end  
 end

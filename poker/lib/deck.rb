@@ -26,13 +26,15 @@ class Deck
   end
 
   def draw_card
-    # return random Card
-    # pop that card
+    @stack.shuffle!
+    @stack.pop
   end
 
   def deal_hand
-    # return 5 randos
-    # pop off
+    @stack.shuffle!
+     hand = []
+     5.times { hand << @stack.pop }
+     hand
   end
 
   def reset_deck
@@ -52,7 +54,7 @@ class Deck
       end
     end
 
-    stack.shuffle!
+    stack
   end
 
 end
