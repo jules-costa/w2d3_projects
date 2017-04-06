@@ -46,11 +46,7 @@ class Deck
 
     CARD_COMBOS.each do |value, symbols|
       symbols.each do |symbol|
-        if symbol == :heart || symbol == :diamond
-          stack << Card.new(value, symbol, 'red')
-        else
-          stack << Card.new(value, symbol, 'black')
-        end
+        stack << Card.new(value, symbol)
       end
     end
 
