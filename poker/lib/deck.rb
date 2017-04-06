@@ -21,7 +21,7 @@ CARD_COMBOS = {
 class Deck
   attr_reader :stack
 
-  def initialize(stack = Deck.build_deck)
+  def initialize(stack = build_deck)
     @stack = stack
   end
 
@@ -38,7 +38,19 @@ class Deck
   end
 
   def reset_deck
-    @stack = Deck::build_deck
+    @stack = build_deck
+  end
+
+  def build_deck
+    stack = []
+
+    CARD_COMBOS.each do |value, symbols|
+      symbols.each do |symbol|
+        stack << Card.new(value, symbol)
+      end
+    end
+
+    stack.shuffle!
   end
 
   def self.build_deck
@@ -50,7 +62,9 @@ class Deck
       end
     end
 
-    stack
+    Deck.new(stack.shuffle!)
   end
+
+
 
 end

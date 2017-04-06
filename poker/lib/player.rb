@@ -6,6 +6,18 @@ class Player
   def initialize(name)
     @name = name
     @player_hand = Hand.new
-    @pot = 100
+    @player_pot = 100
+  end
+
+  def place_bet
+    puts "How much would you like to bet?"
+    bet = gets.chomp.to_i
+    raise 'Not enough $ to bet!' if bet > @player_pot
+    player_pot -= bet
+    bet
+  end
+
+  def trade_cards
+    
   end
 end
